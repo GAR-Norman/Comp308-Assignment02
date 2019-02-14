@@ -1,0 +1,101 @@
+       
+        <!--This page holds the content for the services and projects page -->
+       <!--Load this page only if the project tab was clicked -->
+       <!--Else load the Services page information located after the "Else"
+       bracket below.-->
+  <% if(title == "Projects") { %>
+           
+
+       <div class="card">
+  <div class="card-body" >
+<div class="jumbotron jumbotron-fluid border border-dark text-dark bg-warning">
+  <div class="container ">
+    <h1 class="display-4">My Projects</h1>
+    <p class="lead">
+    I have completed numerous projects over the last three years.
+    </p>
+    <p>Some Examples Below:</p>
+  </div>
+</div>
+
+
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="Images/Yahtzee.png" alt="Card image cap" style="width=500px; height=500px;">
+    <div class="card-block">
+      <h4 class="card-title">Console Application Version of Yahtzee</h4>
+      <p class="card-text">I developed a fully functional console application of the game Yahtzee.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div> 
+  <div class="card">
+    <img class="card-img-top" src="Images/Chart.png" alt="Card image cap" width=500px height=500px >
+    <div class="card-block">
+      <h4 class="card-title">Employee Payroll Management System</h4>
+      <p class="card-text">I created a payroll management system with a team of five other developers.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="Images/Schedule.png" alt="Card image cap" width=500px height=500px>
+    <div class="card-block">
+      <h4 class="card-title">Employee Shift Management System</h4>
+      <p class="card-text">I created an employee shift management system alongside a team of six other developers.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
+ </div>
+</div>    
+<% }  
+
+
+else{ %>
+       <div class="card">
+  <div class="card-body" >
+<div class="jumbotron jumbotron-fluid border border-dark text-white bg-success">
+  <div class="container ">
+    <h1 class="display-4">My Services</h1>
+    <p class="lead">
+    I have multiple services I can employ for you. 
+    I will now showcase my three best:
+    </p>
+    <p>Some Examples Below:</p>
+  </div>
+</div>
+
+   <div class="card-group">
+  <div class="card">
+    <img src="Images/CSharp_Logo.jpg" class="card-img-top" alt="..." width=500px height=500px>
+    <div class="card-body">
+      <h5 class="card-title">C# Programming</h5>
+      <p class="card-text">My Greatest Skill is my C# Programming. 
+      This is due to the fact that I have spent the most time programming in this language.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="Images/SQL.png" class="card-img-top" alt="..." width=500px height=500px>
+    <div class="card-body">
+      <h5 class="card-title">SQL Database Development</h5>
+      <p class="card-text">I am extremely well versed in SQL database development.
+      I am most familiar with Oracle SQL, but I also have a deep knowledge of Mysql 
+      and Microsoft SQL.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="Images/Java.png" class="card-img-top" alt="..." width=500px height=500px>
+    <div class="card-body">
+      <h5 class="card-title">Java Programming & Mobile Application Development</h5>
+      <p class="card-text">My Java Programming skills are also very strong. I have experience in both standard Java SE and Java EE Programming.
+      I have a background in designing mobile applications for Android using Java as well</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
+            <% } 
+
+%>
