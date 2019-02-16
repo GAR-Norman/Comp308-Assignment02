@@ -1,22 +1,26 @@
 let express = require('express');
 let router = express.Router();
 
-/* GET home page. */
+/* Sends User to the home page if nav button is clicked
+*/
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
-/* GET about page. */
+/* Sends User to the about page if nav button is clicked
+*/
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About Me' });
 });
 
-/* GET products page. */
+/* Sends User to the projects page if nav button is clicked
+*/
 router.get('/projects', function(req, res, next) {
   res.render('Services', { title: 'Projects' });
 });
 
-/* GET services page. */
+/* Sends User to the services page if nav button is clicked
+*/
 router.get('/services', function(req, res, next) {
   res.render('Services', { title: 'Services' });
 });
