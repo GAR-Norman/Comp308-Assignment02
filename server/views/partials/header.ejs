@@ -15,15 +15,15 @@
     File Name: Header 
 
  -->
-    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="Content/app.css" />
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/Content/app.css" />
   </head>
   <!--Nav bar control -->
   <body>                                
     <nav class="navbar border border-dark navbar-expand-xl navbar-blue bg-white">
     <img style="max-width:100px;"
-             src="Images/MyLogo.PNG">
+             src="/Images/MyLogo.PNG">
       <a class="navbar-brand" href="/">Gabriel Norman's Career Portfolio</a>
       <button
         class="navbar-toggler"
@@ -94,6 +94,16 @@
               ><i class="fa fa-lg fa-phone"></i> Contact</a
             >
           </li>
+
+           <% if(typeof displayName == 'string' && displayName) { %>
+            <li class="navbar-text"><i class="fa fa-lg fa-user"></i> 
+              Welcome, <%= displayName %></li>
+            <li class="nav-item"><a href="/logout" class="nav-link">
+              <i class="fa fa-lg fa-sign-out"></i> Logout</a></li>
+          <% } else { %>
+            <li class="nav-item"><a href="/login" class="nav-link">
+              <i class="fa fa-lg fa-sign-in"></i> Login</a></li>
+          <% } %>
         </ul>
       </div>
     </nav>
