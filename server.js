@@ -5,7 +5,7 @@
  */
 
 let app = require('./server/config/app');
-let debug = require('debug')('comp308-gabrielnorman-assgn1:server');
+let debug = require('debug')('comp308-gabrielnorman-assgn2:server');
 let http = require('http');
 
 /**

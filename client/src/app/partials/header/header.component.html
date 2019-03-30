@@ -1,0 +1,55 @@
+<nav class="navbar border border-dark navbar-expand-xl navbar-blue bg-white">
+  <img style="max-width:100px;" src="assets/Images/MyLogo.PNG">
+  <a class="navbar-brand" routerLink="/">Gabriel Norman's Career Portfolio</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/"><i class="fa fa-lg fa-home"></i> Home
+        </a>
+      </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about"><i class="fa fa-lg fa-info"></i> About Me</a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/projects"><i class="fa fa-lg fa-briefcase"></i> Projects</a>
+      </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/services"><i class="fa fa-lg fa-birthday-cake"></i> Services</a>
+      </li>
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact"><i class="fa fa-lg fa-phone"></i> Contact</a>
+      </li>
+
+      <!--
+       <li class="navbar-text"><i class="fa fa-lg fa-user"></i>
+         Welcome, <%= displayName %></li>
+       -->
+      <li class="nav-item"><a routerLink="/logout" class="nav-link">
+          <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+
+      <li class="nav-item"><a routerLink="/login" class="nav-link">
+          <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+
+
+    </ul>
+  </div>
+</nav>

@@ -1,31 +1,33 @@
 let express = require('express');
 let router = express.Router();
 
+let jwt = require('jsonwebtoken');
+
 // create a reference to the db schema
 let contactModel = require('../models/contact');
 
-module.exports.displayContactList = (req, res, next) =>{
+module.exports.displayContactList = (req, res, next) => {
     contactModel.find((err, contactList) => {
-        if(err) {
+        if (err) {
             return console.error(err);
-        }
-        else {
-           // console.log(contactList);
+        } else {
+            // console.log(contactList);
 
-            res.render('contacts/index', {
-                title: 'Contact List',
+            res.json({
+                success: true,
+                msg: "Successfully Displayed Contact List",
                 contactList: contactList,
-                displayName: req.user ? req.user.displayName : ""
+                user: req.user
             });
-            
+
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('contacts/add', {
-        title: 'Add New Contact',
-        displayName: req.user ? req.user.displayName : ""
+    res.json({
+        success: true,
+        msg: "Successfully Displayed Add Page"
     });
 }
 
@@ -38,13 +40,15 @@ module.exports.processAddPage = (req, res, next) => {
     });
 
     contactModel.create(newContact, (err, contactModel) => {
-        if(err) {
+        if (err) {
             console.log(err);
             res.end(err);
-        }
-        else {
+        } else {
             // refresh the contact list
-            res.redirect('/contact-list');
+            res.json({
+                success: true,
+                msg: "Successfully Added New Contact"
+            });
         }
     });
 }
@@ -53,17 +57,15 @@ module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
     contactModel.findById(id, (err, contactObject) => {
-        if(err) {
+        if (err) {
             console.log(err);
             res.end(err);
-        }
-        else
-        {
+        } else {
             // show the edit view
-            res.render('contacts/edit', {
-                title: 'Edit Contact',
-                contact: contactObject,
-                displayName: req.user ? req.user.displayName : ""
+            res.json({
+                success: true,
+                msg: "Successfully Displayed Edit Page",
+                contact: contactObject
             });
         }
     });
@@ -79,14 +81,19 @@ module.exports.processEditPage = (req, res, next) => {
         "age": req.body.age
     });
 
-    contactModel.update({_id: id}, updatedContact, (err) => {
-        if(err) {
+    contactModel.update({
+        _id: id
+    }, updatedContact, (err) => {
+        if (err) {
             console.log(err);
             res.end(err);
-        }
-        else {
+        } else {
             // refresh the contact list
-            res.redirect('/contact-list');
+            res.json({
+                success: true,
+                msg: "Successfully Edited Contact",
+                contact: updatedContact
+            });
         }
     })
 }
@@ -94,15 +101,18 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
-    contactModel.remove({_id: id}, (err) => {
-        if(err) {
+    contactModel.remove({
+        _id: id
+    }, (err) => {
+        if (err) {
             console.log(err);
             res.end(err);
-        }
-        else {
+        } else {
             // refresh the contact list
-            res.redirect('/contact-list');
+            res.json({
+                success: true,
+                msg: "Successfully Deleted Contact"
+            });
         }
     });
 }
-
