@@ -101,8 +101,9 @@ let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
 passport.use(strategy);
 
 app.use('/api', indexRouter);
-app.use('/api/contact-list', contactRouter); // todo protect this section
-
+app.use('/api/contact-list', passport.authenticate('jwt', {
+  session: false
+}), contactRouter);
 //capture random links or accidents
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/index.html'));

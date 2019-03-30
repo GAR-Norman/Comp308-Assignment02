@@ -6,11 +6,11 @@ let mongoose = require('mongoose');
 let jwt = require('jsonwebtoken');
 let DB = require('../config/db');
 
-/*
+
 // define the User Model
 let userModel = require("../models/user");
 let User = userModel.User; // alias
-
+/*
 module.exports.displayHomePage = (req, res, next) => {
     res.render('index', {
         title: 'Home'
